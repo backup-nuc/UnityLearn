@@ -4,7 +4,7 @@ public class Life : MonoBehaviour
 {
     // 生命周期函数的访问修饰符一般为private和protected,因为不需要再外部调用生命周期函数 都是Unity自动调用
 
-    void Awake()
+    protected virtual void Awake()
     {
         // 出生时调用,类似构造函数,一个对象(脚本对象)只会调用一次
         // Debug.Log("Awake!"); //继承和没有继承MonoBehaviour的打印方法

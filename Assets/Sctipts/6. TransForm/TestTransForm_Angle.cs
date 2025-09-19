@@ -10,6 +10,11 @@ public class TestTransForm_Angle : MonoBehaviour
         print(this.gameObject.transform.eulerAngles);
         // 2. 相对父对象的角度
         print(this.gameObject.transform.localEulerAngles);
+
+        /**
+        注意:
+            通过欧拉角得到的角度不会出现负数的情况,界面上显示负数,但是使用代码只能获取0到365度的值
+        */
         // 3. 设置角度
         this.gameObject.transform.eulerAngles += new Vector3(0, 10, 0); //世界坐标系下在当前y的基础上加10
         this.gameObject.transform.localEulerAngles += new Vector3(10, 10, 10);  //相对与父节点的旋转值

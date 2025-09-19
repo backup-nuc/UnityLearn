@@ -46,9 +46,17 @@ public class TestGameObject : MonoBehaviour
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
         print(objs.Length);
 
-        // 3. 实例化对象(克隆)方法
+        // 3. 实例化对象(克隆)方法(场景对象或者预制体)
         GameObject clone_obj = GameObject.Instantiate(this.obj);
-        // 4. 删除对象方法
+        // 4. 删除对象方法 (不仅可以删除对象,也可以删除脚本对象)
+        // GameObject.Destroy(clone_obj);
+        GameObject.Destroy(clone_obj, 3); // 等待三秒删除
+        print("删除克隆对象");
+        // Destory不会马上删除对象,会在下一帧把这个对象从内存中移除(异步,可以降低卡顿)
+        // GameObject.DestroyImmediate(clone_obj); // 立刻删除这个对象
+
+        // 5. 过场景不移除(默认切换场景,场景的对象都会被删除)
+        GameObject.DontDestroyOnLoad(this.gameObject); // 切换场景后依附的这个游戏物体不会被删除
     }
 
 

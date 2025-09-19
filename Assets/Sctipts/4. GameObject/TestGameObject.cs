@@ -22,6 +22,7 @@ public class TestGameObject : MonoBehaviour
         // 6. transform
         print(this.gameObject.transform.position);
 
+
         // 二. GameObject的静态方法
         // 1. 创建自带几何体
         GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -48,6 +49,7 @@ public class TestGameObject : MonoBehaviour
 
         // 3. 实例化对象(克隆)方法(场景对象或者预制体)
         GameObject clone_obj = GameObject.Instantiate(this.obj);
+
         // 4. 删除对象方法 (不仅可以删除对象,也可以删除脚本对象)
         // GameObject.Destroy(clone_obj);
         GameObject.Destroy(clone_obj, 3); // 等待三秒删除
@@ -57,8 +59,45 @@ public class TestGameObject : MonoBehaviour
 
         // 5. 过场景不移除(默认切换场景,场景的对象都会被删除)
         GameObject.DontDestroyOnLoad(this.gameObject); // 切换场景后依附的这个游戏物体不会被删除
+
+
+        // 三. GameObject中的成员方法
+        // 1. 创建新物体
+        // GameObject new_obj = new GameObject("创建新物体"); 
+        GameObject new_obj = new GameObject("创建新物体带脚本", typeof(Edit)); // 脚本为变长参数
+
+        // 2. 向GameObject上添加脚本
+        Edit edit = new_obj.AddComponent<Edit>();
+        // edit = new_obj.AddComponent(typeof(Edit)) as Edit;
+
+        // 3. 标签比较
+        if (this.gameObject.CompareTag("Player"))
+        {
+            print("本物体的标签是 Player ");
+        }
+        // 4. 设置激活,失活
+        new_obj.SetActive(false); //失活
+
+        // 5. 通过广播或者发送消息的形式,让自己或别人执行某些行为方法
+        // this.gameObject.SendMessage("TestFuc"); // 命令自己执行TestFuc函数,这个物体所挂脚本中,所有 有TestFuc函数的方法都会执行
+        this.gameObject.SendMessage("TestFucHas", 250);
+
+        // 广播行为,让自己和自己的子对象执行
+        this.gameObject.BroadcastMessage("函数名");
+        // 向自己和父对象执行函数
+        this.gameObject.SendMessageUpwards("函数名");
+
     }
 
+    void TestFucHas(int number)
+    {
+        print($"this.gameObject.SendMessage: {number}");
+    }
+
+    void TestFuc()
+    {
+        print("this.gameObject.SendMessage!");
+    }
 
     void Update()
     {

@@ -26,4 +26,13 @@ public class TestTransForm : MonoBehaviour
         print(this.transform.up); // 对象当前的头顶朝向
         print(this.transform.right); // 对象当前的右手边
     }
+
+    void Update()
+    {
+        // 6. 位移 = 方向 * 速度 * 时间
+        // this.gameObject.transform.position += this.gameObject.transform.forward * 1 * Time.deltaTime;
+        // 参数一:位移多少; 参数二: 相对坐标系 (默认相对自己)
+        // this.transform.Translate(Vector3.forward * 1 * Time.deltaTime, Space.World); //相对于世界坐标z轴动 
+        this.gameObject.transform.Translate(Vector3.forward * 1 * Time.deltaTime, Space.Self); //相对于自己的z轴动
+    }
 }

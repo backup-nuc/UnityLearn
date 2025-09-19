@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TestTransForm : MonoBehaviour
+public class TestTransForm_Vector : MonoBehaviour
 {
     void Start()
     {

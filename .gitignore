@@ -1,9 +1,6 @@
 Packages/
 *.csproj
 *.sln
-Assets/Settings
-Assets/TutorialInfo
-Assets/InputSystem_Actions.inputactions
 Library/
 Logs/
 Packages/

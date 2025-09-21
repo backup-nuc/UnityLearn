@@ -1,6 +1,4 @@
 Packages/
-*.csproj
-*.sln
 Library/
 Logs/
 Packages/

@@ -29,4 +29,25 @@ public static class Tool
             list[i].SetSiblingIndex(i);
         }
     }
+    //为Trapform写一个拓展方法,传入一个名字查找子对象,即使是子对象的子对象也能查找到
+    public static Transform FindIncludeChild(this Transform father, string childName)
+    {
+        Transform ret = null;
+        ret = father.Find(childName);
+        if (ret != null)
+        {
+            return ret;
+        }
+
+        //找自己的子对象
+        for (int i = 0; i < father.childCount; i++)
+        {
+            ret = father.GetChild(i).FindIncludeChild(childName);
+            if (ret != null)
+            {
+                break;
+            }
+        }
+        return ret;
+    }
 }

@@ -43,5 +43,9 @@ public class Fahter : MonoBehaviour
         #region 为Transform写个拓展方法,可以将它的子对象按名字的长短进行排序改变他们的顺序,名字短的在前面,名字长的在后面
         this.transform.Sort();
         #endregion
+
+        #region 为Trapform写一个拓展方法,传入一个名字查找子对象,即使是子对象的子对象也能查找到
+        print(this.transform.FindIncludeChild("ChildChildChild").name);
+        #endregion
     }
 }

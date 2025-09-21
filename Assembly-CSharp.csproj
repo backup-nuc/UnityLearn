@@ -70,6 +70,7 @@
     <Compile Include="Assets\Sctipts\6. TransForm\TestTransForm_Scale.cs" />
     <Compile Include="Assets\Sctipts\3. MonoBehavior\TestMonoBehavior.cs" />
     <Compile Include="Assets\Sctipts\2. Inspector窗口可编辑界面\Edit.cs" />
+    <Compile Include="Assets\Sctipts\8. 坐标转化\TransPos.cs" />
     <Compile Include="Assets\Sctipts\6. TransForm\TestTransForm_Angle.cs" />
     <Compile Include="Assets\Sctipts\1. 生命周期函数\Life_.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />

@@ -39,9 +39,14 @@ public class TestInput : MonoBehaviour
             print("W/w键长按");
         }
         //4. 设置默认轴输入
-        //  键盘AD按下时返回- 1到1之间的变换
+        //  键盘AD按下时返回-1到1之间的变换 
+        print("Horizontal" + Input.GetAxis("Horizontal"));
         //  键盘SW按下时返回-1到1之间的变换
+        print("Vertical" + Input.GetAxis("Vertical"));
         //  鼠标横向移动时-1到1左右
+        print("Mouse X" + Input.GetAxis("Mouse X"));
         //  鼠标竖向移动时-1到1下上
+        print("Mouse Y" + Input.GetAxis("Mouse Y"));
+        //GetAxisRow方法和GetAxis方法相同,不过它的返回值只会是-1 0 1
     }
 }

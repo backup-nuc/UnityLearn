@@ -78,6 +78,7 @@
     <Compile Include="Assets\Sctipts\1. 生命周期函数\Life.cs" />
     <Compile Include="Assets\Sctipts\4. GameObject\TestGameObject.cs" />
     <Compile Include="Assets\Sctipts\6. TransForm\TestTransForm_Vector.cs" />
+    <Compile Include="Assets\Sctipts\9. Input\Input.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

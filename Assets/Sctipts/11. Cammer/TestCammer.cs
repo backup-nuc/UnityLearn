@@ -13,5 +13,7 @@ public class TestCammer
 
     // 3. Clipping Planes: 裁剪平面距离(只有在渲染区间的物体才可以被看到)
 
-    // 4. Depth/Priority: 渲染顺序上的深度(数字越小越先被渲染) 越先被渲染的照片越容易被覆盖
+    // 4. Depth/Priority: 渲染顺序上的深度(数字越小越先被渲染) 越先被渲染的照片越容易被覆盖 (新版本配合Render Type 将两个摄像机的图像展示到一起)
+
+    // 5. Target Texture/Output Texture: 渲染纹理,可以把摄像机画面渲染到一张图上(制作小地图)
 }

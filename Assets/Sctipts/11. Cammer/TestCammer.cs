@@ -16,4 +16,19 @@ public class TestCammer
     // 4. Depth/Priority: 渲染顺序上的深度(数字越小越先被渲染) 越先被渲染的照片越容易被覆盖 (新版本配合Render Type 将两个摄像机的图像展示到一起)
 
     // 5. Target Texture/Output Texture: 渲染纹理,可以把摄像机画面渲染到一张图上(制作小地图)
+
+    // 6. Occlusion Culling: 是否启用剔除遮挡,默认开启,被挡住的物体不会渲染
+
+    // 7. Viewport Rect: 视口范围,屏幕上将绘制该摄像机视图的位置
+    //      - 主要用于双摄相机,0-1是百分比
+
+    // 8. Redering path: 渲染路径(一般默认)
+
+    // 9. HDR: 是否允许高动态范围渲染
+
+    // 10. MSAA: 是否允许抗锯齿
+
+    // 11. Dynamic Resoultion: 是否允许动态分辨率呈现
+
+    // 12. Target Display: 用于那个显示器(用于开发有多个屏幕的平台游戏)
 }

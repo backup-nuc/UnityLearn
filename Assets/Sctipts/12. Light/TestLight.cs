@@ -20,7 +20,11 @@ public class TestLight : MonoBehaviour
         //  NoShadows: 关闭阴影
         // HardShadows: 生硬阴影
         // SoftShadows: 柔和阴影
+
+        // 6. Cookie: 投影遮罩,需要配合对应的材质使用
+
+        // 7. Draw Halo: 球形光环开关
         
-        // 6. Cookie: 投影遮罩
+        // 8. Flare: 耀斑
     } 
 }

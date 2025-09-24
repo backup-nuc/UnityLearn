@@ -76,6 +76,7 @@
     <Compile Include="Assets\Sctipts\9. Input\TestInput.cs" />
     <Compile Include="Assets\Sctipts\6. TransForm\TestTransForm_Angle.cs" />
     <Compile Include="Assets\Sctipts\1. 生命周期函数\Life_.cs" />
+    <Compile Include="Assets\Sctipts\12. Light\TestLight.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Sctipts\7. 父子关系\Tool.cs" />
     <Compile Include="Assets\Sctipts\1. 生命周期函数\Life.cs" />

@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class TestLight : MonoBehaviour
 {
+    public Light light;
     void Start()
     {
+        #region 面板参数
         // 1. Type 光源类型
         // Point点光源,Spot聚光灯,Area面光源(为了减少计算量使用预先计算好的光照,不会实时渲染)
 
@@ -26,5 +28,28 @@ public class TestLight : MonoBehaviour
         // 7. Draw Halo: 球形光环开关
 
         // 8. Flare: 耀斑
+
+        // 9. Culling Mask: 剔除遮罩层,决定哪些对象受到该光源影响
+
+        // 10. Indirect Multiplier: 改变间接光的强度,大于1每次反弹会使光更暗,大于1每次反弹会使光更亮
+
+        // 11. RealtimeShadows: 调整阴影设置
+        //      - Strength: 阴影暗度0~1之间,越大越黑
+        //      - Resoultion: 阴影贴图渲染分辨率,越高越逼真,消耗越高
+        //      - Bias: 阴影退离光源的距离
+        //      - Normal Bias: 阴影投射面沿法线收缩距离
+        //      - Near Panel: 渲染阴影的近裁剪面
+
+        // 12. Cookie Size: 遮罩大小
+
+        // 13. Render Mode: 渲染优先级
+        //      - Auto:运行时确定
+        //      - Important: 以像素质量为单位进行渲染
+        //      - Not Important: 以快速模式进行渲染
+        #endregion
+
+        //代码控制面板参数
+        this.light.intensity = 0.5f;
+        // ......
     } 
 }

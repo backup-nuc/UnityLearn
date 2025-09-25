@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TestLight : MonoBehaviour
 {
-    public Light light;
+    public new Light light;
     void Start()
     {
         #region 面板参数

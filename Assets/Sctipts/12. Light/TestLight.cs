@@ -51,5 +51,21 @@ public class TestLight : MonoBehaviour
         //代码控制面板参数
         this.light.intensity = 0.5f;
         // ......
+
+        #region 光相关面板 Window-Rendering-Light
+        // 1. Environment
+        //  Skybox Material: 可以改变天空材质
+        //  Sun Source: 太阳来源(不设置会默认使用场景中最亮的方向光代表太阳)
+        //  Environment Lighting: 环境光设置
+        //      - Source: 环境光光源颜色 Skybox(天空盒材质作为环境光颜色) Gradient(可以为天空,地平线,地面单独选择颜色和他们的混合)
+        //      - Intensity Multiplier: 环境光亮度
+        //      - Ambient Mode: 全局光照模式,只有启动了实施全局和全局烘焙时才有用
+        //  OtherSettings: 
+        //      - Fog: 雾开关
+        //      - Halo Textute:光环周围围着的光环的纹理
+        //      - Flare Fade Speed: 耀斑淡出的时间(最初出现之后淡出的时间) 
+        //      - Flare Strength: 耀斑可见性
+        //      - Spot Cookie: 聚光灯剪影纹理
+        #endregion
     } 
 }

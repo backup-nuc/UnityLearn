@@ -24,7 +24,7 @@ public class TestLight : MonoBehaviour
         // 6. Cookie: 投影遮罩,需要配合对应的材质使用
 
         // 7. Draw Halo: 球形光环开关
-        
+
         // 8. Flare: 耀斑
     } 
 }

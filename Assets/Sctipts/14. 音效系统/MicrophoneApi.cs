@@ -46,5 +46,5 @@ public class MicrophoneApi : MonoBehaviour
             float[] samples = new float[audioClip.samples * audioClip.channels]; // samples是音频的采样点数 * 通道数(规则)
             audioClip.GetData(samples, 0); //参数1：存储音频数据的数组 参数2：从第几个采样点开始获取一般为 0
         }
-    }
+    } 
 }

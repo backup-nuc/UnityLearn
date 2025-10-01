@@ -52,5 +52,14 @@ public class PlayerPrefsApi : MonoBehaviour
         }
         // 删除所有键
         // PlayerPrefs.DeleteAll();
+
+        // 6. PlayerPrefs数据存储位置
+        // Windows: HKCU\Software\Unity\UnityEditor\公司名称\产品 (项下的注册表中,公司名称和产品名称可以在Unity的Player Settings中设置)
+        // Android: /data/data/包名/shared_prefs/pkg-name.xml (包名可以在Unity的Player Settings中设置)
+        // iOS: /Library/Preferences/(应用ID).plist (应用ID可以在Unity的Player Settings中设置)
+
+        // 7. PlayerPrefs数据唯一性
+        // PlayerPrefs中不同数据的唯一性是由key决定的,不同的key决定了不同的数据
+        // 如果两个不同的数据使用了相同的key,那么后存储的数据会覆盖之前的数据,要求数据唯一性,需要确保每个数据的key都是唯一的
     }
 }

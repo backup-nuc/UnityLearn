@@ -49,7 +49,7 @@ public class PlayerPrefsManage
             // 存储List的长度
             PlayerPrefs.SetInt($"{key}_Count", list.Count);
             // Debug.Log($"存储List长度: {key}_Count = {list.Count}");
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++) 
             {
                 object item = list[i];
                 string itemKey = $"{key}_{i}";

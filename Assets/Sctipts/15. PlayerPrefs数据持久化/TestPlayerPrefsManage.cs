@@ -10,6 +10,13 @@ public class PlayerData
     public bool sex;
 
     public List<int> scores = new List<int>() { 100, 200, 300 };
+
+    public Dictionary<string, int> itemCounts = new Dictionary<string, int>()
+    {
+        {"Potion", 5 },
+        {"Elixir", 3 },
+        {"Sword", 1 }
+    };
 }
 
 public class TestPlayerPrefsManage : MonoBehaviour

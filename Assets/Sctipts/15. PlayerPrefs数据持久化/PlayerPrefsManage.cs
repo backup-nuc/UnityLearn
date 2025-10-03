@@ -56,6 +56,25 @@ public class PlayerPrefsManage
                 this._SaveValue(item, itemKey);
             }
         }
+        else if (typeof(IDictionary).IsAssignableFrom(valueType))
+        {
+            // Dictionary类型
+            IDictionary dict = (IDictionary)value;
+            // 存储Dictionary的长度
+            PlayerPrefs.SetInt($"{key}_Count", dict.Count);
+            Debug.Log($"存储Dictionary长度: {key}_Count = {dict.Count}");
+            int index = 0;
+            foreach (DictionaryEntry entry in dict)
+            {
+                object dictKey = entry.Key;
+                object dictValue = entry.Value;
+                string itemKey = $"{key}_Key_{index}";
+                string itemValue = $"{key}_Value_{index}";
+                this._SaveValue(dictKey, itemKey);
+                this._SaveValue(dictValue, itemValue);
+                index++;
+            }
+        }
         else
         {
             Debug.LogError($"不支持存储该类型的数据: {valueType}");

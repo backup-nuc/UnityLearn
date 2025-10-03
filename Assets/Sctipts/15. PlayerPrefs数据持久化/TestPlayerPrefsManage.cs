@@ -38,6 +38,26 @@ public class PlayerData
         {"Shield", new ItemInfo() { itemName = "Shield", itemID = 2, itemWeight = 7.5f } },
         {"Bow", new ItemInfo() { itemName = "Bow", itemID = 3, itemWeight = 3.2f } }
     };
+
+    public override string ToString()
+    {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        sb.AppendLine($"playerName: {playerName}");
+        sb.AppendLine($"level: {level}");
+        sb.AppendLine($"health: {health}");
+        sb.AppendLine($"sex: {sex}");
+        sb.AppendLine($"scores: [{string.Join(", ", scores)}]");
+        sb.AppendLine("itemCounts:");
+        foreach (var kv in itemCounts)
+            sb.AppendLine($"  {kv.Key}: {kv.Value}");
+        sb.AppendLine("items:");
+        foreach (var item in items)
+            sb.AppendLine($"  {{itemName: {item.itemName}, itemID: {item.itemID}, itemWeight: {item.itemWeight}}}");
+        sb.AppendLine("itemDetails:");
+        foreach (var kv in itemDetails)
+            sb.AppendLine($"  {kv.Key}: {{itemName: {kv.Value.itemName}, itemID: {kv.Value.itemID}, itemWeight: {kv.Value.itemWeight}}}");
+        return sb.ToString();
+    }
 }
 
 public class TestPlayerPrefsManage : MonoBehaviour
@@ -52,5 +72,11 @@ public class TestPlayerPrefsManage : MonoBehaviour
 
         // 将用户信息存储到PlayerPrefs中
         PlayerPrefsManage.instance.SaveData(playerData, "Player1");
+
+        // 读取数据
+        PlayerData loadedData = (PlayerData)PlayerPrefsManage.instance.LoadData(typeof(PlayerData), "Player1");
+
+        print(loadedData);
     }
 }
+

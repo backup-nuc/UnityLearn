@@ -77,10 +77,12 @@ public class PlayerPrefsManage
         }
         else
         {
-            Debug.LogError($"不支持存储该类型的数据: {valueType}");
+            // 自定义类型
+            this.SaveData(value, key);
         }
         Debug.Log($"存储数据: {key} = {value}");
     }
+    
     /// <summary>
     /// 存储数据
     /// </summary>

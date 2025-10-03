@@ -42,6 +42,20 @@ public class PlayerPrefsManage
             int boolValue = (bool)value ? 1 : 0;
             PlayerPrefs.SetInt(key, boolValue);
         }
+        else if (typeof(IList).IsAssignableFrom(valueType))
+        {
+            //List类型 因为有泛型无法确定类型,所以这里判断是不是IList接口的子类
+            IList list = (IList)value;
+            // 存储List的长度
+            PlayerPrefs.SetInt($"{key}_Count", list.Count);
+            Debug.Log($"存储List长度: {key}_Count = {list.Count}");
+            for (int i = 0; i < list.Count; i++)
+            {
+                object item = list[i];
+                string itemKey = $"{key}_{i}";
+                this._SaveValue(item, itemKey);
+            }
+        }
         else
         {
             Debug.LogError($"不支持存储该类型的数据: {valueType}");

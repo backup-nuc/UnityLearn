@@ -8,6 +8,8 @@ public class PlayerData
     public int level;
     public float health;
     public bool sex;
+
+    public List<int> scores = new List<int>() { 100, 200, 300 };
 }
 
 public class TestPlayerPrefsManage : MonoBehaviour
